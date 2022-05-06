@@ -5,6 +5,12 @@ namespace KannaDiscordBot.Core.Modules;
 
 public class Commands : ModuleBase<SocketCommandContext>
 {
+    [Command("ping")]
+    public async Task Ping()
+    {
+        await ReplyAsync("pong");
+    }
+
     [Command("hug")]
     public Task Hug(IGuildUser user = null)
     {
@@ -12,8 +18,7 @@ public class Commands : ModuleBase<SocketCommandContext>
     }
 
     [Command("ban")]
-    [RequireUserPermission(GuildPermission.BanMembers, ErrorMessage = "you don't have the permission ''ban_member''!")]
-    public async Task BanUser(IGuildUser user = null, [Remainder] string reason = null)
+    public async Task Ban(IUser user = null, [Remainder] string reason = null)
     {
         if (user == null)
         {

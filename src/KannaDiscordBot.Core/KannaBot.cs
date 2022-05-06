@@ -12,11 +12,11 @@ public class KannaBot
     private CommandService commandService;
     private IServiceProvider serviceProvider;
 
-    private readonly string token;
+    private readonly string accessToken;
 
-    public KannaBot(string token)
+    public KannaBot(string accessToken)
     {
-        this.token = token;
+        this.accessToken = accessToken;
 
         socketClient = null;
         commandService = null;
@@ -35,7 +35,7 @@ public class KannaBot
 
         socketClient.Log += SocketClient_Log;
         await RegisterCommandsAsync();
-        await socketClient.LoginAsync(TokenType.Bot, token);
+        await socketClient.LoginAsync(TokenType.Bot, accessToken);
         await socketClient.StartAsync();
         await Task.Delay(-1);
     }
