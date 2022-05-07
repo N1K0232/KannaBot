@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "KannaDiscordBot": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "AccessToken": "T1RjeU1EYzFNVGs1TnpRd05qWXhOemd3LlluVHhrdy5qdG1YR2RvbDRibTBoMzV2MGstRjZRWUF0QW8="
+      }
+    }
+  }
+}
